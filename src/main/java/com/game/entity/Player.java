@@ -8,7 +8,7 @@ import java.util.Date;
 @Table(name="player", schema="rpg")
 @NamedQuery(name = Player.GET_PLAYERS, query = "SELECT COUNT(p) FROM Player p")
 public class Player {
-    public static final String GET_PLAYERS = "Player.GET_TOTAL_PLAYERS";
+    public static final String GET_PLAYERS = "Player.GET_PLAYERS";
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

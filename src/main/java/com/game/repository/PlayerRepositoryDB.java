@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Properties;
 
-import static com.game.entity.Player.GET_TOTAL_PLAYERS;
+import static com.game.entity.Player.GET_PLAYERS;
 
 @Repository(value = "db")
 public class PlayerRepositoryDB implements IPlayerRepository {
@@ -51,7 +51,7 @@ public class PlayerRepositoryDB implements IPlayerRepository {
     @Override
     public int getAllCount() {
         try(Session session = sessionFactory.openSession()) {
-            Query<Long> query = session.createNamedQuery(GET_TOTAL_PLAYERS, Long.class);
+            Query<Long> query = session.createNamedQuery(GET_PLAYERS, Long.class);
             Long count = query.getSingleResult();
             return count.intValue();
         } catch (Exception e) {
